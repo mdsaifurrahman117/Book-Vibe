@@ -6,8 +6,8 @@ import ReactDOM from "react-dom/client";
 
 const router = createBrowserRouter([
             {
-                        path: "/",
-                        element: <App/>,
+                        path: "/Book-vibe",
+                        element: <App></App>
             },
 ]);
 
