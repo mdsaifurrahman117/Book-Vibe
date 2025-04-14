@@ -1,6 +1,7 @@
 import React from 'react';
 import { useLoaderData, useParams } from 'react-router';
-import Button from '../Button';
+import { add_to_stored_read_list } from '../../utility/add_to_storage';
+import { add_to_wish_list } from '../../utility/add_to_wish_list';
 
 const Book_detail = () => {
 
@@ -18,17 +19,15 @@ const Book_detail = () => {
             // destructuring book data
             const { bookName, author, image, rating, category, tags, review, totalPages, publisher, yearOfPublishing } = book;
 
-            // button 
-            const button = <>
-                        <Button
-                                    name={"Read"}
-                                    className={"btn desc-font"}
-                        />
-                        <Button
-                                    name={"Wishlist"}
-                                    className={"btn bg-blue-400 text-white desc-font"}
-                        />
-            </>
+            // adding to the read list
+            const handle_add_to_storage = ( id ) => {
+                        add_to_stored_read_list( id );
+            }
+
+            // adding to the wish list
+            const handle_add_to_wist_list = ( id ) => {
+                        add_to_wish_list( id );
+            }
 
             return (
                         <section className="w-11/12 mx-auto my-20">
@@ -67,7 +66,14 @@ const Book_detail = () => {
                                                                                     <h3 className="desc-font">Rating : <span className="font-semibold">{rating}</span></h3>
                                                                         </div>
                                                                         <div className="flex flex-row gap-5">
-                                                                                    {button}
+                                                                                    <button
+                                                                                                className={"btn desc-font"}
+                                                                                                onClick={ () => handle_add_to_storage(bookId) }
+                                                                                    >Mark as Read </button>
+                                                                                    <button
+                                                                                                className={"btn bg-blue-400 text-white desc-font"}
+                                                                                                onClick={ () => handle_add_to_wist_list(bookId) }
+                                                                                    >Wishlist</button>
                                                                         </div>
                                                             </div>
                                                 </div>
