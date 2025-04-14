@@ -1,12 +1,9 @@
 import React from 'react';
 
-const Button = ({ name }) => {
+const Button = ({ name, className }) => {
             return (
                         <button
-                                    className={name === "Sign In" ?
-                                                "btn text-white desc-font bg-green-500"
-                                                :
-                                                "btn text-white desc-font bg-blue-400"}
+                                    className={className}
                         >{name}</button>
             );
 };

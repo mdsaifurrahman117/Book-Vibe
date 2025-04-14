@@ -1,14 +1,13 @@
 import React from 'react';
 import Header from './components/Header';
+import Hero from './components/Hero';
 import Footer from './components/Footer';
 
 const App = () => {
             return (
                         <>
                                     <Header/>
-                                    <div>
-                                                <h1 className="text-4xl text-center">hello world</h1>
-                                    </div>
+                                    <Hero/>
                                     <Footer/>
                         </>
             );
