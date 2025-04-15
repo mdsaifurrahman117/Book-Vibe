@@ -31,7 +31,7 @@ const Header = () => {
             </>
 
             return (
-                        <header className="bg-base-100 shadow-sm">
+                        <header className="bg-base-100 shadow-sm fixed top-0 w-full z-[999]">
                                     <nav className="navbar">
                                                 <div className="navbar-start">
                                                             <a className="btn btn-ghost text-xl headline-font">Book Vibe</a>

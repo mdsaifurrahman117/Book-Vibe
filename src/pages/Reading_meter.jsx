@@ -17,8 +17,6 @@ const Reading_meter = () => {
                         set_book_list(book_list)
             }, [all_data])
 
-            console.log()
-
             const colors = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042', 'red', 'pink'];
 
             const getPath = (x, y, width, height) => {
@@ -38,27 +36,29 @@ const Reading_meter = () => {
             return (
                         <section className="w-11/12 mx-auto my-20">
                                     <h1 className="text-4xl text-center headline-font mb-10">Completed Book </h1>
-                                    <BarChart
-                                                width={900}
-                                                height={450}
-                                                data={book_list}
-                                                margin={{
-                                                            top: 20,
-                                                            right: 0,
-                                                            left: 0,
-                                                            bottom: 0,
-                                                }}
-                                                className="mx-auto"
-                                    >
-                                                <CartesianGrid strokeDasharray="3 3" />
-                                                <XAxis dataKey="bookName" />
-                                                <YAxis />
-                                                <Bar dataKey="totalPages" fill="#8884d8" shape={<TriangleBar />} label={{ position: 'top' }}>
-                                                            {book_list.map((entry, index) => (
-                                                                        <Cell key={`cell-${index}`} fill={colors[index % 20]} />
-                                                            ))}
-                                                </Bar>
-                                    </BarChart>
+                                    <div className="w-11/12 mx-auto overflow-y-scroll">
+                                                <BarChart
+                                                            width={900}
+                                                            height={450}
+                                                            data={book_list}
+                                                            margin={{
+                                                                        top: 20,
+                                                                        right: 0,
+                                                                        left: 0,
+                                                                        bottom: 0,
+                                                            }}
+                                                            className="mx-auto"
+                                                >
+                                                            <CartesianGrid strokeDasharray="3 3" />
+                                                            <XAxis dataKey="bookName" />
+                                                            <YAxis />
+                                                            <Bar dataKey="totalPages" fill="#8884d8" shape={<TriangleBar />} label={{ position: 'top' }}>
+                                                                        {book_list.map((entry, index) => (
+                                                                                    <Cell key={`cell-${index}`} fill={colors[index % 20]} />
+                                                                        ))}
+                                                            </Bar>
+                                                </BarChart>
+                                    </div>
                         </section>
             );
 };
