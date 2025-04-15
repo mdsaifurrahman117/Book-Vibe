@@ -7,6 +7,8 @@
  * 6. if yes, do not add the book to the list
  */
 
+import { toast } from "react-toastify";
+
 const get_stored_read_list = () => {
             // getting read list 
             const stored_list_string = localStorage.getItem("read-list");
@@ -23,12 +25,17 @@ const add_to_stored_read_list = ( id ) => {
 
             if( stored_list.includes(id) ) {
                         // already exist, do not add it
-                        console.log(id, "id is already exist in the list")
+
+                        // ideally trigger toast from the component
+                        toast.error("already added to the read list")
             } else {
                         // add to the read list
                         stored_list.push(id);
                         const stored_list_string = JSON.stringify(stored_list);
                         localStorage.setItem("read-list", stored_list_string);
+
+                        // ideally trigger toast from the component
+                        toast("book added to the read list")
             }
 }
 

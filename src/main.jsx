@@ -1,6 +1,6 @@
 import { createBrowserRouter, RouterProvider } from "react-router";
 import "./index.css"
-import React from "react";
+import React, { StrictMode } from "react";
 import ReactDOM from "react-dom/client";
 import Root from './layout/Root';
 import App from "./App"
@@ -8,6 +8,7 @@ import Error_page from './pages/Error_page';
 import Listed_books from './pages/Listed_books';
 import Reading_meter from "./pages/Reading_meter";
 import Book_detail from "./components/books/Book_detail";
+import { ToastContainer } from 'react-toastify';
 
 const router = createBrowserRouter([
             {
@@ -42,5 +43,8 @@ const router = createBrowserRouter([
 const root = document.getElementById("root");
 
 ReactDOM.createRoot(root).render(
-            <RouterProvider router={router} />
+            <StrictMode>
+                        <RouterProvider router={router} />,
+                        <ToastContainer />
+            </StrictMode>
 );

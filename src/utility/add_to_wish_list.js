@@ -6,6 +6,8 @@
  * 5. if not, add it to the wish list
  */
 
+import { toast } from "react-toastify";
+
 // getting the wish list 
 const get_wish_list = () => {
             const get_stored_wish_list = localStorage.getItem("wish-list");
@@ -22,13 +24,18 @@ const add_to_wish_list = (id) => {
             
             // checking already exist in the wish list
             if ( stored_wish_list.includes(id) ) {
-                        console.log(id, "id is already exist in the wish list");
+
+                        // ideally trigger toast from the component
+                        toast.error("already added to the wish list")
             } else {
 
                         stored_wish_list.push(id);
                         const wish_list = JSON.stringify(stored_wish_list);
                         localStorage.setItem("wish-list", wish_list);
+                        
+                        // ideally trigger toast from the component
+                        toast("book added to the wish list")
             }
 }
 
-export { add_to_wish_list }
+export { add_to_wish_list, get_wish_list }
