@@ -29,8 +29,7 @@ const router = createBrowserRouter([
                                     {
                                                 path: "listed-books",
                                                 element: <Listed_books/>,
-                                                // worst way to load data
-                                                loader: () => fetch("booksData.json") // do not  load all the data of one item
+                                                loader: () => fetch("booksData.json") .then(response => response.json())
                                     },
                                     {
                                               path: "reading-meter",
