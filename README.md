@@ -76,14 +76,14 @@ Book-Vibe/
 │   │   │   ├── Filter Page.jpg
 │   │   │   ├── Landing Page Design.jpg
 │   │   │   └── Meter.jpg
-│   │   └── book.ico   # Favicon
+│   │   └── book.ico      # Favicon
 │   └── booksData.json    # Application data
 │
 │── src/                  # Main source code
 │   ├── assets/           # Static assets like images, etc.
 │   │   └── books.jpg
 │   ├── components/       # Reusable components
-│   │   ├── books/            # Book components
+│   │   ├── books/        # Book components
 │   │   │   ├── Book_detail.jsx
 │   │   │   ├── Book.jsx
 │   │   │   └── Books.jsx
