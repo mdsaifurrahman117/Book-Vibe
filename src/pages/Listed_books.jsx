@@ -20,7 +20,6 @@ const Listed_books = () => {
                         const stored_read_list_int = stored_read_list.map(id => parseInt(id));
 
                         // worst way 
-                        // console.log(stored_read_list, all_data, stored_read_list_int)
                         const read_book_list = all_data.filter(  book => stored_read_list_int.includes(book.bookId))
                         set_read_list(read_book_list)
             }, [all_data]);

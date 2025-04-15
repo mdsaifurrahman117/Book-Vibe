@@ -33,7 +33,8 @@ const router = createBrowserRouter([
                                     },
                                     {
                                               path: "reading-meter",
-                                              element: <Reading_meter/>  
+                                              element: <Reading_meter/>,
+                                              loader: () => fetch("booksData.json") .then(response => response.json())
                                     }
                         ]
             },
